@@ -1,0 +1,42 @@
+[
+  {
+    "id": "c64b44ee-4c2e-4288-8ef4-142b01e4c963",
+    "name": "Rakhmatjon Rakhmatov",
+    "phone": "900391802",
+    "email": "hoocker@gmail.com",
+    "message": "Assalomu aleykum\r\n",
+    "createdAt": "2023-06-19T11:03:03.519Z"
+  },
+  {
+    "id": "aec5ef65-0cd9-4f94-995a-427e4ceafb2e",
+    "name": "Joe",
+    "phone": "998331234567",
+    "email": "ali123@gmail.com",
+    "message": "Hello, Mr.Admin",
+    "createdAt": "2023-06-19T11:20:31.471Z"
+  },
+  {
+    "id": "cc208446-5d4f-4f13-98f9-8a6c94ff71b0",
+    "name": "Flora",
+    "phone": "998331234587",
+    "email": "flora23@mail.ru",
+    "message": "Where can I buy these birds?",
+    "createdAt": "2023-06-19T17:52:24.105Z"
+  },
+  {
+    "id": "d7c0e608-3f53-430c-aefa-1d994432a89e",
+    "name": "Rakhmatjon Rakhmatov",
+    "phone": "900391802",
+    "email": "mr.rakhmatov1207@gmail.com",
+    "message": "Awesome",
+    "createdAt": "2023-06-19T20:47:39.228Z"
+  },
+  {
+    "id": "e6596409-3e1b-4e8f-b955-38b400b954ae",
+    "name": "Joe",
+    "phone": "998331234567",
+    "email": "flora23@mail.ru",
+    "message": "ajsjashas",
+    "createdAt": "2023-06-19T20:56:43.794Z"
+  }
+]
