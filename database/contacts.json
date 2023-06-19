@@ -16,27 +16,11 @@
     "createdAt": "2023-06-19T11:20:31.471Z"
   },
   {
-    "id": "cc208446-5d4f-4f13-98f9-8a6c94ff71b0",
+    "id": "6833420b-592c-4fda-a0e0-258f586242cc",
     "name": "Flora",
-    "phone": "998331234587",
+    "phone": "339333333",
     "email": "flora23@mail.ru",
-    "message": "Where can I buy these birds?",
-    "createdAt": "2023-06-19T17:52:24.105Z"
-  },
-  {
-    "id": "d7c0e608-3f53-430c-aefa-1d994432a89e",
-    "name": "Rakhmatjon Rakhmatov",
-    "phone": "900391802",
-    "email": "mr.rakhmatov1207@gmail.com",
-    "message": "Awesome",
-    "createdAt": "2023-06-19T20:47:39.228Z"
-  },
-  {
-    "id": "e6596409-3e1b-4e8f-b955-38b400b954ae",
-    "name": "Joe",
-    "phone": "998331234567",
-    "email": "flora23@mail.ru",
-    "message": "ajsjashas",
-    "createdAt": "2023-06-19T20:56:43.794Z"
+    "message": "Finally, It is working.",
+    "createdAt": "2023-06-19T23:17:39.266Z"
   }
 ]

@@ -233,8 +233,8 @@
                         <th scope="col">Check</th>
                       </tr>
                     </thead>
-                    <tbody id="contactsTableBody">
-                      <!-- <% contacts.forEach((contact) => { %>
+                    <tbody>
+                      <% contacts.forEach((contact) => { %>
                         <tr>
                           <td><h6 class="fw-semibold mb-0"><%= contact.id %></h6></td>
                           <td>
@@ -256,7 +256,9 @@
                             <a href="" class="btn btn-outline-danger btn-rounded"><i class="fas fa-trash"></i></a>
                         </td>
                         </tr>   
-                        <%})%>   -->
+                        <%})%>  
+                    </tbody>
+                    <tbody id="contactsTableBody">
                     </tbody>
                   </table>
                 </div>
@@ -275,46 +277,26 @@
 <script type="module">
     import { io } from "https://cdn.socket.io/4.3.2/socket.io.esm.min.js";
     const socket = io("http://localhost:8000");
+    const contactsTableBody = document.getElementById('contactsTableBody');
 
-    socket.on('contact', (contacts) => {
-      // Clear existing table rows
-      const contactsTableBody = document.getElementById('contactsTableBody');
-      contactsTableBody.innerHTML = '';
+    socket.on('contact', (newContact) => {
 
       // Add new table rows for each contact
-      contacts.forEach((contact) => {
-        const tr = document.createElement('tr');
+    const tr = document.createElement('tr');
         
-        const idTd = document.createElement('td');
-        idTd.innerHTML = `<h6 class="fw-semibold mb-0">${contact.id}</h6>`;
-        tr.appendChild(idTd);
-
-        const nameTd = document.createElement('td');
-        nameTd.innerHTML = `<h6 class="fw-semibold mb-1">${contact.name}</h6>`;
-        tr.appendChild(nameTd);
-
-        const phoneTd = document.createElement('td');
-        phoneTd.innerHTML = `<p class="mb-0 fw-normal">${contact.phone}</p>`;
-        tr.appendChild(phoneTd);
-
-        const emailTd = document.createElement('td');
-        emailTd.innerHTML = `<div><p class="mb-0 fw-normal">${contact.email}</p></div>`;
-        tr.appendChild(emailTd);
-
-        const messageTd = document.createElement('td');
-        messageTd.innerHTML = `<h6 class="fw-semibold mb-0 fs-4">${contact.message}</h6>`;
-        tr.appendChild(messageTd);
-
-        const actionsTd = document.createElement('td');
-        actionsTd.innerHTML = `
-          <a href="" class="btn btn-outline-info btn-rounded"><i class="fas fa-check"></i></a>
-          <a href="" class="btn btn-outline-danger btn-rounded"><i class="fas fa-trash"></i></a>
-        `;
-        tr.appendChild(actionsTd);
-
-        contactsTableBody.appendChild(tr);
-      });
-    });
+        tr.innerHTML = `
+    <td><h6 class="fw-semibold mb-0">${newContact.id}</h6></td>
+    <td><h6 class="fw-semibold mb-1">${newContact.name}</td>
+    <td><p class="mb-0 fw-normal">${newContact.phone}</td>
+    <td><p class="mb-0 fw-normal">${newContact.email}</td>
+    <td><h6 class="fw-semibold mb-0 fs-4">${newContact.message}</td>
+    <td class="text-end">
+          <a href="#" class="btn btn-outline-info btn-rounded"><i class="fas fa-check"></i></a>
+          <a href="#" class="btn btn-outline-danger btn-rounded"><i class="fas fa-trash"></i></a>
+    </td>
+  `;
+  contactsTableBody.appendChild(tr);
+});
   </script>
 
 </html>

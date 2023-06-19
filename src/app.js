@@ -6,8 +6,8 @@ const router = require("./routes");
 const cookie = require("cookie-parser");
 const fileUpload = require("express-fileupload");
 const io = require("socket.io")(server, {cors: {origin: "*"}});
-
-const Contact = new (require("../src/utils/io"))('./database/contacts.json');
+const createContact = require('../src/controllers/contact.controller');
+const ContactModel = require("../src/models/contact.model");
 
 const PORT = process.env.PORT || 8000; 
 
@@ -22,10 +22,13 @@ app.use(express.static(process.cwd() + "/src/public"));
 app.set("view engine", "ejs");
 app.set("views", "src/views");
 
-io.on('connection', async(socket) => {
-    console.log(socket.id);
-    const contacts = await Contact.read();
-    socket.emit('contact', contacts);
+io.on('connection', (socket) => {
+    socket.on('contact', (contact) => {
+        const { name, phone, email, message } = contact
+        const newContact = new ContactModel(name, phone, email, message);
+        io.emit('contact', newContact);
+        createContact(contact);
+    })
 
 })
 
